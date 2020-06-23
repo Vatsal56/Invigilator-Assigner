@@ -121,6 +121,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIR = os.path.join(BASE_DIR, 'static/')
+STATICFILES_DIR = [
+    os.path.join(BASE_DIR, 'invigilatorassignment/static/')
+    ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT =  os.path.join(BASE_DIR, 'static/')
