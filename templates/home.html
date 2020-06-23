@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    {% load static %}
-    <meta charset="utf-8">
-    <title></title>
-    <script src="https://kit.fontawesome.com/52aff7d645.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  </head>
-  <body>
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://kit.fontawesome.com/52aff7d645.js" crossorigin="anonymous"></script>
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Invigilator Assigner</a>
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <sapn class="icon-bar"></sapn>
-          </button>
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Invigilator Assigner</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="#">Teachers</a>
+          <a class="nav-item nav-link" href="/admin">Admin</a>
         </div>
-        <ul class="nav navbar-nav navbar-right collapse navbar-collapse">
-          <li class="active"><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="#">Teachers</a></li>
-          <li><a href="#">Assign</a></li>
-        </ul>
       </div>
     </nav>
-    <!-- NAVBAR -->
+  </header>
 
-    <!-- CONTAINER -->
+  <section class="jumbotron text-center">
     <div class="container">
-
-      <!-- JUMBOTRON -->
-      <div class="jumbotron">
-       <h2 class="lolol">Well Hello</h2>
-      </div>
-      <!-- JUMBOTRON -->
-
+      <h1 class="jumbotron-heading">Hi, This is the Invigilator Assigner.</h1>
+      <p class="lead text-muted">Assign invigilators with a click of a button.</p>
+      <p>
+        <a href="#" class="btn btn-primary my-2">Assign</a>
+      </p>
     </div>
-    <!-- CONTAINER -->
+  </section>
 
-  </body>
+  <div class="container">
+    <div class="jumbotron text-center">
+      <p>ADD PAST TIME TABLES HERE</p>
+    </div>
+
+  </div>
+
+</body>
 </html>
 
 
