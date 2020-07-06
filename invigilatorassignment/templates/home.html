@@ -12,7 +12,15 @@
 
     <div class="container">
         <div class="jumbotron text-center">
-            <p>ADD PAST TIME TABLES HERE</p>
+            <table class="table">
+                {% for rows in timetable %}
+                    <tr>
+                        {% for value in rows %}
+                            <th scope="col">{{ value }}</th>                        
+                        {% endfor %}
+                    </tr>
+            {% endfor %}
+            </table>
         </div>
     </div>
 {% endblock content %}

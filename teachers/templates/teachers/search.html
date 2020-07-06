@@ -20,8 +20,7 @@ Teachers
 {% block content %}
   <section class="jumbotron">
     <div class="container">
-      <h1 class="jumbotron-heading text-center">Teachers</h1>
-      <p class="lead text-muted text-center">Click on any teacher for details.</p>
+      <h3 class="jumbotron-heading text-center">Here are your results</h3>
       <hr>
       <form method="POST" id="search" action="{% url 'search' %}">
         {% csrf_token %}
@@ -30,13 +29,11 @@ Teachers
           <button style="margin: auto;" type="submit" class="btn btn-primary btn-block col-3">Search</button>
         </div>
       </form>
-      
       <hr>
-        {% for teacher in teachers.all %}
-          <a href="" class="text-formatting">{{ teacher }} - {{ teacher.subject }}</a>
-          <hr>
-        {% endfor %}
-      </div>
+    {% for teacher in match.all %}
+        <a href="" class="text-formatting">{{ teacher }} - {{ teacher.subject }}</a>
+        <hr>
+    {% endfor %}
     </div>
   </section>
 {% endblock content %}
