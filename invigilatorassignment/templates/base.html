@@ -1,11 +1,11 @@
-{% load static %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>{% block title %}{% endblock %}</title>
   <script src="https://kit.fontawesome.com/52aff7d645.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <!-- CSS only -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -24,64 +24,23 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link active" href="{% url 'home' %}">Home</a>
-          <a class="nav-item nav-link" href="{% url 'teachers_home' %}">Teachers</a>
-          <a class="nav-item nav-link" href="{% url 'assigner_home' %}">Assign</a>
+          {% block home %}
+            <a class="nav-item nav-link active" href="{% url 'home' %}">Home</a>
+          {% endblock home %}
+          {% block teachers %}
+            <a class="nav-item nav-link" href="{% url 'teachers_home' %}">Teachers</a>
+          {% endblock teachers %}
+          {% block assign %}
+            <a class="nav-item nav-link" href="{% url 'assigner_home' %}">Assign</a>
+          {% endblock assign %}
           <a class="nav-item nav-link" href="/admin">Admin</a>
         </div>
       </div>
     </nav>
   </header>
 
-  <section class="jumbotron text-center">
-    <div class="container">
-      <h1 class="jumbotron-heading">Hi, This is the Invigilator Assigner.</h1>
-      <p class="lead text-muted">Assign invigilators with a click of a button.</p>
-      <p>
-        <a href="#" class="btn btn-primary my-2">Assign</a>
-      </p>
-    </div>
-  </section>
-
-  <div class="container">
-    <div class="jumbotron text-center">
-      <p>ADD PAST TIME TABLES HERE</p>
-    </div>
-
-  </div>
+  {% block content %}
+  {% endblock content %}
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- lol -->

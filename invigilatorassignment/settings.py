@@ -56,7 +56,7 @@ ROOT_URLCONF = 'invigilatorassignment.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['invigilatorassignment/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
