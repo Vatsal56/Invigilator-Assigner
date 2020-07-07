@@ -13,5 +13,11 @@ Teachers
 {% endblock home %}
 
 {% block content %}
-  detail
+  <div class="jumbotron">
+    <div class="container">
+      <h2>{{ teacher.name }}</h2>
+      <hr>
+      <h4>Subject - {{ teacher.subject }}</h4>
+    </div>
+  </div>
 {% endblock content %}
