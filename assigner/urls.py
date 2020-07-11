@@ -5,4 +5,5 @@ from . import views
 urlpatterns = [
     path('', views.home, name='ahome'),
     path('manual/', views.manual, name='manual'),
+    path('genmanuallist/', views.genmanuallist, name='genmanuallist')
 ]

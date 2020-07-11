@@ -30,7 +30,8 @@ Teachers
           <button style="margin: auto;" type="submit" class="btn btn-primary btn-block col-3">Search</button>
         </div>
       </form>
-      
+      <hr>
+      <a href="{% url 'add' %}"><button class="btn btn-primary btn-block">Add Teacher</button></a>
       <hr>
         {% for teacher in teachers.all %}
           <a href="{% url 'detail' teacher.id %}" class="text-formatting">{{ teacher }} - {{ teacher.subject }}</a>

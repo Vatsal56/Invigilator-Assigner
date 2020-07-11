@@ -22,7 +22,7 @@ Manual Assigner
   <div class="container">
       <h2>How many Invigilators would you like to assign?</h2>
       <hr>
-      <form method="POST" action="{% url 'manual' %}">
+      <form style="margin-bottom: 20px;" method="POST" action="{% url 'manual' %}">
         {% csrf_token %}  
         <div class="form-row align-items-center">
             <div class="col-auto">
@@ -34,37 +34,27 @@ Manual Assigner
         </div>
       </form>
 
-      <form method="POST" action="{% url 'manual' %}">
+      <form method="POST" action="{% url 'genmanuallist' %}">
+        {% csrf_token %}
           {% for num in num_list %}
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label><strong>Subject {{ num }}.</strong></label>
-              <div class="dropdown">
-                <button style="width: 100%;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Choose
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  {% for subject in subjects.all %}
-                    <a class="dropdown-item" href="#">{{ subject.subject }}</a>
-                  {% endfor %}
-                </div>
-              </div>
-            </div>
-            <div class="form-group col-md-6">
-              <label><strong>Teacher</strong></label>
-              <div class="dropdown">
-                <button style="width: 100%;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Choose
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  {% for teacher in teachers.all %}
-                    <a class="dropdown-item" href="#">{{ teacher }}</a>
-                  {% endfor %}
-                </div>
-              </div>
-            </div>
+          <div style="margin-bottom: 50px;" class="form-row">
+              <label style="margin-right: 50px;" for="subjects"><strong>Subject {{ num }}.</strong></label>
+              <select class="mb-2" style="margin-right: 50px;" name="subjects" id="subjects">
+                {% for subject in subjects.all %}
+                  <option value="{{ subject.subject }}">{{ subject.subject }}</option>
+                {% endfor %}
+              </select>
+              <label style="margin-right: 50px;" for="teachers"><strong>Teacher</strong></label>
+              <select class="mb-2" style="margin-right: 50px;" name="teachers" id="teachers">
+                {% for teacher in teachers.all %}
+                  <option value="{{ teacher }}">{{ teacher }}</option>
+                {% endfor %}
+              </select>
           </div>
           {% endfor %}
+          {% if num_list %}
+            <button type="submit" class="btn btn-primary btn-block">Generate List</button>
+          {% endif %}
       </form>
   </div>   
 
