@@ -34,18 +34,18 @@ Manual Assigner
         </div>
       </form>
 
-      <form method="POST" action="{% url 'genmanuallist' %}">
+      <form method="POST" action="{% url 'assigned'  %}">
         {% csrf_token %}
           {% for num in num_list %}
           <div style="margin-bottom: 50px;" class="form-row">
-              <label style="margin-right: 50px;" for="subjects"><strong>Subject {{ num }}.</strong></label>
-              <select class="mb-2" style="margin-right: 50px;" name="subjects" id="subjects">
+              <label style="margin-right: 50px;" for="subjects"><strong>Exam {{ num }}.</strong></label>
+              <select class="mb-2" style="margin-right: 50px;" name="subject{{ num }}" id="subjects">
                 {% for subject in subjects.all %}
                   <option value="{{ subject.subject }}">{{ subject.subject }}</option>
                 {% endfor %}
               </select>
               <label style="margin-right: 50px;" for="teachers"><strong>Teacher</strong></label>
-              <select class="mb-2" style="margin-right: 50px;" name="teachers" id="teachers">
+              <select class="mb-2" style="margin-right: 50px;" name="teacher{{ num }}" id="teachers">
                 {% for teacher in teachers.all %}
                   <option value="{{ teacher }}">{{ teacher }}</option>
                 {% endfor %}
@@ -59,35 +59,3 @@ Manual Assigner
   </div>   
 
 {% endblock content %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{% for num in num_list %}
-        {% for teacher in teachers.all %}
-          <p>{{ teacher.name }}</p>
-        {% endfor %}
-      {% endfor %}
