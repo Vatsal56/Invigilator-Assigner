@@ -8,5 +8,5 @@ def homepage(request):
     timetable = []
     for row in ws.values:
         timetable.append(list(row))
-    return render(request, 'home.html', {'timetable':timetable})
+    return render(request, 'home.html')
     

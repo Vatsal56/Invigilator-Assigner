@@ -31,4 +31,13 @@ def assigned(request):
 
 def list_detail(request, list_id):
     assigned_list = get_object_or_404(AssignedList, pk=list_id)
-    return render(request, 'assigner/list_detail.html', {'assigned_list':assigned_list})
+    new_list = assigned_list.assigned
+    for idx, items in enumerate(new_list):
+        items = items.replace("[","")
+        items = items.replace("]","")
+        items = items.replace("'","")
+        items = items.split(',')
+        new_list[idx] = items
+    print(new_list[1][0])
+        
+    return render(request, 'assigner/list_detail.html', {'assigned_list':assigned_list, 'new_list':new_list})

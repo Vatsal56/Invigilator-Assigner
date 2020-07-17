@@ -31,7 +31,7 @@ Teachers
       </form>
       <hr>
     {% for teacher in match.all %}
-        <a href="" class="text-formatting">{{ teacher }} - {{ teacher.subject }}</a>
+        <a href="{% url 'detail' teacher.id %}" class="text-formatting">{{ teacher }} - {{ teacher.subject }}</a>
         <hr>
     {% endfor %}
     </div>
